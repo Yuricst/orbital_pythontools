@@ -73,7 +73,7 @@ def lambert(r1,r2,tof,mu,grade=None):
 		r2 (1x3 numpy array): final position vector of arrival [km]
 		tof (float): time of flight [s]
 		mu (float): gravitational parameter [km^3/s^2]
-		grade (str): trajectory orientation ('pro' for prograde or 'retro' for retrograde). If not provided, assume prograde orbit
+		grade (str): trajectory orientation ('pro' for prograde or 'retro' for retrograde). If not provided, assume prograde orbit.
 	Returns:
 		(tuple): velocity vector at position 1 and 2 of solution trajectory to Lambert problem
 	"""
@@ -129,9 +129,10 @@ def lambert(r1,r2,tof,mu,grade=None):
 		count += 1
 
 		#FIXME: include escape clause
-		if count > 100:
+		if count > 1000:
 			print('Newton\'s method exceeded {} steps; consider changing initial guess of z for better result'.format(count))
 			break
+
 
 	# display orbit type
 	if z > 0:
