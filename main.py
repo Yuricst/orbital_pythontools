@@ -22,7 +22,9 @@ mu_E = 398600
 v1, v2 = lb.lambert(r1=r_in, r2=r_fn, tof=dt, mu=mu_E, grade='pro')
 
 # obtain orbital elements
-elements = oc.sv2el(r_in,v1,mu_E)
+elements_in = oc.sv2el(r_in,v1,mu_E)
 
 # print example
-print(elements.h)
+print(elements_in.h)
+
+
