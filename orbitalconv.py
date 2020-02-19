@@ -24,7 +24,7 @@ class sv2el_return:
 
 def sv2el(r,v,mu):
 	"""
-	Funciton calculates orbital elements from state vector.
+	Funciton calculates orbital elements from state vector for e<1
 	Args:
 		r (1x3 numpy array): position vector of object [km/s]
 		v (1x3 numpy array): velocity vector of object [km/s]
@@ -74,3 +74,6 @@ def sv2el(r,v,mu):
 
 	# return orbital elements as dictionary
 	return sv2el_return(h,i,RAAN,e,omega,theta)
+
+
+# also el2sv!!
